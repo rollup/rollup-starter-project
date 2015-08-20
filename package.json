@@ -1,0 +1,41 @@
+{
+  "name": "rollup-starter-project",
+  "version": "1.0.0",
+  "description": "Sample project for packages built with rollup.",
+  "main": "dist/rollup-starter-project.js",
+  "jsnext:main": "lib/index.js",
+  "scripts": {
+    "build": "mkdir -p dist && rollup lib/index.js | babel -m umd --module-id rollupStarterProject -o dist/rollup-starter-project.js",
+    "pretest": "eslint lib test",
+    "test": "mocha --compilers js:babel/register --recursive test",
+    "prepublish": "npm run build && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eventualbuddha/rollup-starter-project.git"
+  },
+  "keywords": [
+    "es6",
+    "modules",
+    "rollup",
+    "bundle",
+    "browser"
+  ],
+  "author": "Brian Donovan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eventualbuddha/rollup-starter-project/issues"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "homepage": "https://github.com/eventualbuddha/rollup-starter-project#readme",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-eslint": "^4.0.10",
+    "eslint": "^1.2.0",
+    "mocha": "^2.2.5",
+    "rollup": "^0.14.1"
+  }
+}
