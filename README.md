@@ -1,12 +1,14 @@
 # rollup-starter-project
 
 This package shows how to get started with [rollup] (and [babel]) for writing
-npm packages using ES6 modules. Writing npm packages this way allows users of
-your package to choose whether they use it using the traditional `require`
-function understood by node.js, or using the `import` statement added in ES6
-which can result in smaller bundles through live-code inclusion static analysis.
+npm packages using ES6 modules. Writing npm packages with a [jsnext:main] allows
+users of your package to choose whether they use it using the traditional
+`require` function understood by node.js, or using the `import` statement added
+in ES6 which can result in smaller bundles through live-code inclusion static
+analysis.
 
 [babel]: https://github.com/babel/babel
+[jsnext:main]: https://github.com/rollup/rollup/wiki/jsnext:main
 [rollup]: https://github.com/rollup/rollup
 
 ## Usage
