@@ -30,7 +30,7 @@ This is the starting point for tests in your package. You should import the
 code to test from `lib/` as shown in the example. The project is already
 configured to use mocha when you run `npm test`.
 
-### dist/roller-starter-project.js
+### dist/rollup-starter-project.js
 
 This is the result of building a UMD bundle that includes all the code needed
 to run your package. If your package has dependencies you do not want bundled,
