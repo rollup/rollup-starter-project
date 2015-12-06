@@ -2,12 +2,13 @@
   "name": "rollup-starter-project",
   "version": "1.0.0",
   "description": "Sample project for packages built with rollup.",
-  "main": "dist/rollup-starter-project.js",
-  "jsnext:main": "lib/index.js",
+  "main": "dist/rollup-starter-project.umd.js",
+  "jsnext:main": "dist/rollup-starter-project.es6.js",
   "scripts": {
-    "build": "mkdir -p dist && rollup lib/index.js | babel -m umd --module-id rollupStarterProject -o dist/rollup-starter-project.js",
-    "pretest": "eslint lib test",
-    "test": "mocha --compilers js:babel/register --recursive test",
+    "prebuild": "eslint lib test",
+    "build": "rollup -c rollup.umd.config.js && rollup -c rollup.es6.config.js",
+    "pretest": "rollup -c rollup.test.config.js",
+    "test": "mocha build/test-bundle.js",
     "prepublish": "npm run build && npm test"
   },
   "repository": {
@@ -32,10 +33,11 @@
   ],
   "homepage": "https://github.com/eventualbuddha/rollup-starter-project#readme",
   "devDependencies": {
-    "babel": "^5.8.21",
-    "babel-eslint": "^4.0.10",
+    "babel-preset-es2015-rollup": "^1.0.0",
     "eslint": "^1.2.0",
     "mocha": "^2.2.5",
-    "rollup": "^0.14.1"
+    "rollup": "^0.21.2",
+    "rollup-plugin-babel": "^2.2.0",
+    "rollup-plugin-multi-entry": "^1.0.1"
   }
 }
