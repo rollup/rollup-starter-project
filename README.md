@@ -19,7 +19,7 @@ README.md, package.json, and LICENSE).
 
 ### lib/index.js
 
-This is the ES6 entry point of your application, and the main file you'll start
+This is the main source file in your application, and the main file you'll start
 editing to implement the functionality of your package. As shown in this
 example, you can `import` other files from this file similarly to how you would
 `require` packages typically (e.g. `lib/utils.js`).
@@ -30,11 +30,19 @@ This is the starting point for tests in your package. You should import the
 code to test from `lib/` as shown in the example. The project is already
 configured to use mocha when you run `npm test`.
 
-### dist/rollup-starter-project.js
+### dist/rollup-starter-project.umd.js
 
-This is the result of building a UMD bundle that includes all the code needed
-to run your package. If your package has dependencies you do not want bundled,
-be sure to configure rollup to exclude them by marking them as `external`.
+This is the `main` file of the package and includes all the code needed to run
+your package. If your package has dependencies you do not want bundled, be sure
+to configure rollup to exclude them by marking them as `external`.
+
+### dist/rollup-starter-project.es6.js
+
+This is the `jsnext:main` file of the package and includes all the code needed
+to run your package. Compared to the `umd` version, this one preserves ES6
+imports and exports at the package boundary for tools that support it (such as
+rollup). If your package has dependencies you do not want bundled, be sure to
+configure rollup to exclude them by marking them as `external`.
 
 ### .eslintrc
 
