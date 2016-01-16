@@ -5,5 +5,7 @@ export default {
   entry: 'test/**/*_test.js',
   plugins: [babel(), multiEntry()],
   format: 'cjs',
-  dest: 'build/test-bundle.js'
+  intro: 'require("source-map-support").install();',
+  dest: 'build/test-bundle.js',
+  sourceMap: true
 };
