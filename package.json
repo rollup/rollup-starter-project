@@ -33,12 +33,12 @@
   ],
   "homepage": "https://github.com/eventualbuddha/rollup-starter-project#readme",
   "devDependencies": {
-    "babel-eslint": "^5.0.0-beta4",
-    "babel-preset-es2015-rollup": "^1.0.0",
-    "eslint": "^1.2.0",
-    "mocha": "^2.2.5",
-    "rollup": "^0.21.2",
-    "rollup-plugin-babel": "^2.2.0",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "eslint": "^1.10.3",
+    "mocha": "^2.3.4",
+    "rollup": "^0.24.1",
+    "rollup-plugin-babel": "^2.3.9",
     "rollup-plugin-multi-entry": "^1.0.1"
   }
 }
