@@ -40,6 +40,10 @@
     "rollup": "^0.24.1",
     "rollup-plugin-babel": "^2.3.9",
     "rollup-plugin-multi-entry": "^1.1.0",
+    "rollup-plugin-npm": "^1.4.0",
     "source-map-support": "^0.4.0"
+  },
+  "dependencies": {
+    "redux": "^3.2.1"
   }
 }
