@@ -1,4 +1,4 @@
-import { multiply } from '../lib/index';
+import { multiply } from '../';
 import { strictEqual } from 'assert';
 
 describe('multiply', () => {

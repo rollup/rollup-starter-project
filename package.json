@@ -2,18 +2,18 @@
   "name": "rollup-starter-project",
   "version": "1.0.0",
   "description": "Sample project for packages built with rollup.",
-  "main": "dist/rollup-starter-project.umd.js",
-  "jsnext:main": "dist/rollup-starter-project.es6.js",
+  "main": "dist/rollup-starter-project.js",
+  "jsnext:main": "dist/rollup-starter-project.mjs",
   "scripts": {
     "prebuild": "eslint lib test",
-    "build": "rollup -c rollup.config.umd.js && rollup -c rollup.config.es6.js",
-    "pretest": "rollup -c rollup.config.test.js",
-    "test": "mocha build/test-bundle.js",
-    "prepublish": "npm run build && npm test"
+    "build": "rollup -c",
+    "pretest": "npm run build",
+    "test": "mocha",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eventualbuddha/rollup-starter-project.git"
+    "url": "git+https://github.com/rollup/rollup-starter-project.git"
   },
   "keywords": [
     "es6",
@@ -25,21 +25,23 @@
   "author": "Brian Donovan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eventualbuddha/rollup-starter-project/issues"
+    "url": "https://github.com/rollup/rollup-starter-project/issues"
   },
   "files": [
     "lib",
     "dist"
   ],
-  "homepage": "https://github.com/eventualbuddha/rollup-starter-project#readme",
+  "homepage": "https://github.com/rollup/rollup-starter-project#readme",
+  "dependencies": {},
   "devDependencies": {
-    "babel-eslint": "^6.0.0",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.9.0",
     "babel-preset-es2015-rollup": "^1.1.1",
-    "eslint": "^2.5.3",
-    "mocha": "^2.4.5",
-    "rollup": "^0.26.2",
-    "rollup-plugin-babel": "^2.4.0",
-    "rollup-plugin-multi-entry": "^1.2.0",
-    "source-map-support": "^0.4.0"
+    "babel-register": "^6.9.0",
+    "babelrc-rollup": "^1.1.0",
+    "eslint": "^2.11.1",
+    "mocha": "^2.5.3",
+    "rollup": "^0.29.0",
+    "rollup-plugin-babel": "^2.5.1"
   }
 }
