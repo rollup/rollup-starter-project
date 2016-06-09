@@ -30,19 +30,22 @@ This is the starting point for tests in your package. You should import the
 code to test from `lib/` as shown in the example. The project is already
 configured to use mocha when you run `npm test`.
 
-### dist/rollup-starter-project.umd.js
+### dist/rollup-starter-project.js
 
 This is the `main` file of the package and includes all the code needed to run
-your package. If your package has dependencies you do not want bundled, be sure
-to configure rollup to exclude them by marking them as `external`.
+your package. It is in UMD format, meaning it can be used in most JavaScript
+runtime environments. If your package has dependencies you do not want bundled,
+be sure to configure rollup to exclude them by marking them as `external`. By
+default all `dependencies` entries in your `package.json` will be `external`.
 
-### dist/rollup-starter-project.es6.js
+### dist/rollup-starter-project.mjs
 
 This is the `jsnext:main` file of the package and includes all the code needed
-to run your package. Compared to the `umd` version, this one preserves ES6
-imports and exports at the package boundary for tools that support it (such as
-rollup). If your package has dependencies you do not want bundled, be sure to
-configure rollup to exclude them by marking them as `external`.
+to run your package. Compared to the UMD version, this one preserves ES6 imports
+and exports at the package boundary for tools that support it (such as rollup).
+If your package has dependencies you do not want bundled, be sure to configure
+rollup to exclude them by marking them as `external`. By default all
+`dependencies` entries in your `package.json` will be `external`.
 
 ### .eslintrc
 
@@ -63,6 +66,12 @@ Enables eslint to understand all JavaScript syntax that
 code. This can be removed if you plan not to use babel to transform ES2015 code
 to ES5 or if you plan not to use eslint.
 
+### babel-preset-es2015
+
+Used when babel is used without rollup, and referenced by the `.babelrc` file.
+This can be removed if you plan not to use babel to transform ES2015 code to ES5
+or you plan to specify all the babel plugins manually.
+
 ### babel-preset-es2015-rollup
 
 The base preset of babel plugins required to support all ES2015 syntax is the
@@ -70,6 +79,17 @@ The base preset of babel plugins required to support all ES2015 syntax is the
 support for ES2015 modules since rollup handles them instead of babel. This can
 be removed if you plan not to use babel to transform ES2015 code to ES5 or you
 plan to specify all the babel plugins manually.
+
+### babel-register
+
+Provides on-demand transpilation via babel so no precompilation is required.
+This is used in the tests to allow running them without compiling first, and is
+referenced in `test/mocha.opts`.
+
+### babelrc-rollup
+
+Handles transforming the babel config from `.babelrc` to one suitable for use
+with `rollup-plugin-babel`, where you don't want to use any module plugins.
 
 ### eslint
 
@@ -94,23 +114,6 @@ to remove this dependency.
 
 This plugin enables support for [babel](http://babeljs.io), which transforms
 ES2015 code to ES5. You can remove this if you plan not to use ES2015 code.
-
-### rollup-plugin-multi-entry
-
-Used in `rollup.config.test.js` to enable using all the testing files as the
-entry point for the test build. You can remove this if you only have a single
-test file, or if you want to test your built file in `dist/` instead of
-referencing your source files directly. Doing so has the advantage of testing
-the exact bytes that you plan to distribute, but the disadvantage of being
-unable to unit test private module functionality (i.e. you can only test things
-exported by your package). A hybrid approach might be the best of both worlds.
-
-### source-map-support
-
-Used in `rollup.config.test.js` to provide error messages with stack traces
-referencing the original source files. You can remove this if you do not care
-about stack trace lines matching source files, or if you use some other
-mechanism to achieve this.
 
 ## Contributing
 
