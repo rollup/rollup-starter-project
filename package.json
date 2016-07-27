@@ -43,6 +43,7 @@
     "eslint": "^2.11.1",
     "mocha": "^2.5.3",
     "rollup": "^0.30.0",
-    "rollup-plugin-babel": "^2.5.1"
+    "rollup-plugin-babel": "^2.5.1",
+    "rollup-plugin-istanbul": "^1.0.0"
   }
 }
