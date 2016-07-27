@@ -41,6 +41,7 @@
     "babel-register": "^6.9.0",
     "babelrc-rollup": "^1.1.0",
     "eslint": "^2.11.1",
+    "istanbul": "^0.4.4",
     "mocha": "^2.5.3",
     "rollup": "^0.30.0",
     "rollup-plugin-babel": "^2.5.1",
