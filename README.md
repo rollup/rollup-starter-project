@@ -104,6 +104,17 @@ plan not to lint your code or if you're using another linter, such as
 not to write tests (don't do that!) or if you plan to use another test runner
 such as [Jasmine](http://jasmine.github.io).
 
+### istanbul
+
+[istanbul](https://github.com/gotwarlost/istanbul) is a code coverage tool that 
+computes statement, line, function and branch coverage with module loader hooks 
+to transparently add coverage when running tests. You can remove this dependency 
+if you won't be writing tests or you don't care about code coverage.
+
+You'll also have to change the `test/mocha.opts` file and remove the custom 
+reporter option `--reporter test/istanbul.reporter.js`. After that you can safely 
+delete the `test/istanbul.reporter.js` file.
+
 ### rollup
 
 [rollup](http://rollupjs.org) is a JavaScript module bundler and the reason
@@ -114,6 +125,16 @@ to remove this dependency.
 
 This plugin enables support for [babel](http://babeljs.io), which transforms
 ES2015 code to ES5. You can remove this if you plan not to use ES2015 code.
+
+### rollup-plugin-istanbul
+
+This plugin provides seamless integration between Rollup and 
+[Istanbul](https://github.com/gotwarlost/istanbul) to generate code coverage
+reports of your project. If you don't plan to write tests or simply don't care 
+about code coverage, you can safely remove this along with Istanbul.
+
+Just like with the Istanbul dependency, you should change the `test/mocha.opts`
+file. Read the above instructions for removing Istanbul.
 
 ## Contributing
 
