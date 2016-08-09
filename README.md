@@ -66,19 +66,17 @@ Enables eslint to understand all JavaScript syntax that
 code. This can be removed if you plan not to use babel to transform ES2015 code
 to ES5 or if you plan not to use eslint.
 
+### babel-plugin-external-helpers
+
+Ensures that only one copy of each babel helper is included in the bundle when
+used with rollup. This can be removed if you plan not to use babel to transform
+ES2015 code to ES5.
+
 ### babel-preset-es2015
 
 Used when babel is used without rollup, and referenced by the `.babelrc` file.
 This can be removed if you plan not to use babel to transform ES2015 code to ES5
 or you plan to specify all the babel plugins manually.
-
-### babel-preset-es2015-rollup
-
-The base preset of babel plugins required to support all ES2015 syntax is the
-`babel-preset-es2015` preset. This preset is the same thing, but without
-support for ES2015 modules since rollup handles them instead of babel. This can
-be removed if you plan not to use babel to transform ES2015 code to ES5 or you
-plan to specify all the babel plugins manually.
 
 ### babel-register
 

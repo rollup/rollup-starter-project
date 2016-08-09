@@ -23,7 +23,7 @@ export default {
     },
     {
       dest: pkg['jsnext:main'],
-      format: 'es6',
+      format: 'es',
       sourceMap: true
     }
   ]
