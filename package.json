@@ -13,10 +13,7 @@
     "test": "mocha",
     "prepublish": "npm test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rollup/rollup-starter-project.git"
-  },
+  "repository": "rollup/rollup-starter-project",
   "keywords": [
     "es6",
     "modules",
