@@ -11,7 +11,9 @@
     "watch": "rollup -c -w",
     "pretest": "npm run build",
     "test": "karma start",
-    "prepublish": "npm test",
+    "preuglify": "npm test",
+    "uglify": "cd dist && uglifyjs rollup-starter-project.js --output rollup-starter-project.min.js --source-map rollup-starter-project.min.js.map --in-source-map rollup-starter-project.js.map --compress --mangle",
+    "prepublish": "npm run uglify",
     "prestart": "npm install",
     "start": "ws"
   },
@@ -54,6 +56,7 @@
     "rollup-plugin-node-builtins": "^2.0.0",
     "rollup-plugin-node-globals": "^1.1.0",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-watch": "^2.5.0"
+    "rollup-watch": "^2.5.0",
+    "uglify-js": "^2.7.5"
   }
 }
