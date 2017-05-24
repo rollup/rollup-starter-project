@@ -7,9 +7,9 @@
   "jsnext:main": "dist/rollup-starter-project.mjs",
   "scripts": {
     "prebuild": "eslint lib test",
-    "build": "rollup -c",
+    "build": "rollup -c --environment BUILD:production",
     "watch": "rollup -c -w",
-    "pretest": "npm run build",
+    "pretest": "rollup -c",
     "test": "mocha",
     "prepublish": "npm test"
   },
