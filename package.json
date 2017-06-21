@@ -1,16 +1,16 @@
 {
   "name": "rollup-starter-project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sample project for packages built with rollup.",
   "main": "dist/rollup-starter-project.js",
   "module": "dist/rollup-starter-project.mjs",
   "jsnext:main": "dist/rollup-starter-project.mjs",
   "scripts": {
-    "prebuild": "eslint lib test",
-    "build": "rollup -c --environment BUILD:production",
-    "watch": "rollup -c -w",
-    "pretest": "rollup -c",
-    "test": "mocha",
+    "prebuild": "node ./node_modules/eslint/bin/eslint.js lib test",
+    "build": "node ./node_modules/rollup/bin/rollup -c --environment BUILD:production",
+    "watch": "node ./node_modules/rollup/bin/rollup -c -w",
+    "pretest": "node ./node_modules/rollup/bin/rollup -c",
+    "test": "node ./node_modules/mocha/bin/mocha",
     "prepublish": "npm test"
   },
   "repository": "rollup/rollup-starter-project",
