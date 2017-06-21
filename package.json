@@ -41,7 +41,7 @@
     "eslint": "^3.12.2",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
-    "rollup": "^0.37.0",
+    "rollup": "^0.43.0",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-istanbul": "^1.1.0",
     "rollup-watch": "^2.5.0"
