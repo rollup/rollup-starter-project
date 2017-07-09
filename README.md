@@ -1,4 +1,4 @@
-# See [rollup-starter-lib](https://github.com/rollup/rollup-starter-lib) for a simpler, up-to-date example of how to create a library with Rollup
+# See [rollup-starter-lib](https://github.com/rollup/rollup-starter-lib) and [rollup-starter-app](https://github.com/rollup/rollup-starter-app) for a simpler, up-to-date example of how to create a library or application with Rollup
 
 ---
 
