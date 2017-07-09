@@ -1,3 +1,7 @@
+# See [rollup-starter-lib](https://github.com/rollup/rollup-starter-lib) for a simpler, up-to-date example of how to create a library with Rollup
+
+---
+
 # rollup-starter-project
 
 This package shows how to get started with [rollup][rollup] (and [babel][babel]) for writing
