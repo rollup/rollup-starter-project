@@ -5,14 +5,19 @@ import istanbul from 'rollup-plugin-istanbul';
 const pkg = require('./package.json');
 const external = Object.keys(pkg.dependencies);
 
+const plugins = [
+  babel(babelrc()),
+];
+
+if (process.env.BUILD !== 'production') {
+  plugins.push(istanbul({
+    exclude: ['test/**/*', 'node_modules/**/*']
+  }));
+}
+
 export default {
   entry: 'lib/index.js',
-  plugins: [
-    babel(babelrc()),
-    istanbul({
-      exclude: ['test/**/*', 'node_modules/**/*']
-    })
-  ],
+  plugins,
   external,
   targets: [
     {
