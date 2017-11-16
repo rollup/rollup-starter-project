@@ -11,7 +11,7 @@
     "watch": "rollup -c -w",
     "pretest": "rollup -c",
     "test": "mocha",
-    "prepublish": "npm test"
+    "prepublish": "BUILD=production npm test"
   },
   "repository": "rollup/rollup-starter-project",
   "keywords": [
