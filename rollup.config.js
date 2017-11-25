@@ -2,10 +2,10 @@ import babel from 'rollup-plugin-babel';
 import babelrc from 'babelrc-rollup';
 import istanbul from 'rollup-plugin-istanbul';
 
-let pkg = require('./package.json');
-let external = Object.keys(pkg.dependencies);
+const pkg = require('./package.json');
+const external = Object.keys(pkg.dependencies);
 
-let plugins = [
+const plugins = [
   babel(babelrc()),
 ];
 
@@ -17,8 +17,8 @@ if (process.env.BUILD !== 'production') {
 
 export default {
   entry: 'lib/index.js',
-  plugins: plugins,
-  external: external,
+  plugins,
+  external,
   targets: [
     {
       dest: pkg.main,
